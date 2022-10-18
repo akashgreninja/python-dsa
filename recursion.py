@@ -1,4 +1,4 @@
-
+##single list 
 class Node:
     def __init__(self,value=None):
         self.value=value
@@ -71,8 +71,49 @@ class SSLinked:
                 return node.value,"has been found"
             node=node.next
 
-    # def delete(self,value):
-    
+    def delete(self,location):
+        if self.head==None:
+            print("node does not exist")
+        
+        else:
+            if location==0:
+                if self.head==self.tail:
+                    self.head=None
+                    self.tail=None
+                
+                else:
+                    self.head=self.head.next
+
+            elif location ==-1:
+                if location==0:
+                    if self.head==self.tail:
+                        self.head=None
+                        self.tail=None
+                
+                else:
+                    node=self.head
+                    while node is not None:
+                        if node.next==self.tail:
+                            break
+                        node=node.next
+                    node.next=None
+                    self.tail=node
+
+            else:
+                tempnode=self.head
+                index=0
+                while index<location-1:
+                    tempnode=tempnode.next
+                    index+=1
+                
+                lastnode=tempnode.next
+                tempnode.next=lastnode.next
+
+    def deleteall(self):
+        self.head=None
+        self.tail=None
+
+
 
 singlelist=SSLinked()
 singlelist.insertssl(1,1)
@@ -81,6 +122,8 @@ singlelist.insertssl(3,-1)
 singlelist.insertssl(4,-1)
 singlelist.transversal()
 print(singlelist.search(2))
+singlelist.delete(2)
+singlelist.deleteall()
 print([n.value for n in singlelist ])
                 
                 
