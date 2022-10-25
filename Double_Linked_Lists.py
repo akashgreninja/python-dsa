@@ -58,17 +58,22 @@ class DLL:
                     tempnode = tempnode.next
                     index += 1
 
-                newnode.next = tempnode.next
-                newnode.prev=tempnode
-                # this line gets the prev of the next node
-                newnode.prev.next = newnode
-                tempnode.next=newnode
 
-                # nextnode = tempnode.next
-                # newnode.prev = tempnode
-                # newnode.next = nextnode
-                # tempnode.next = newnode.prev
-                # nextnode.prev = newnode
+
+                # newnode.next = tempnode.next
+                # newnode.prev=tempnode
+                # # this line gets the prev of the next node
+                # newnode.prev.next = newnode
+                # tempnode.next=newnode
+
+
+                # my logic
+
+                nextnode = tempnode.next
+                newnode.prev = tempnode
+                newnode.next = nextnode
+                tempnode.next = newnode
+                nextnode.prev = newnode
 
               
 
