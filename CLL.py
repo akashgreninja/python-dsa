@@ -158,7 +158,7 @@ CircularLinkedList.insert(4,-1)
 # CircularLinkedList.insert(1,-2)
 # CircularLinkedList.insert(2,-3)
 # CircularLinkedList.insert(3,-4)
-
+print([i.value for i in CircularLinkedList])
 CircularLinkedList.transverse()
 CircularLinkedList.search(1)
 CircularLinkedList.delete(3)
