@@ -74,7 +74,8 @@ class Queue:
     
         self.LinkedList.head=None
         self.LinkedList.tail=None
-        
+
+
 
 # checklist=Queue()
 # checklist.enqueue(1)
