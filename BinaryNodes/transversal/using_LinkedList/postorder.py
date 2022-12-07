@@ -114,17 +114,18 @@ def deleteDeepestNode(rootNode,dnode):
         
         if root.value.rightnode:
             if root.value.rightnode==dnode:
+
                 root.value.rightnode=None
                 return 
-            else:
-                customqueue.enqueue(root.value.rightchild)
+            # else:
+            #     customqueue.enqueue(root.value.rightchild)
         
         if root.value.leftnode:
             if root.value.leftnode==dnode:
                 root.value.leftnode=None
                 return 
-            else:
-                customqueue.enqueue(root.value.leftchild)
+            # else:
+            #     customqueue.enqueue(root.value.leftchild)
 
 
 # newnode=DeepestNode(tree)
@@ -152,10 +153,22 @@ def finaldelete(value,tree):
             customqueue.enqueue(root.value.rightnode)# type: ignore
     return"failed"
 
-print(finaldelete("Drinks",tree))
-levelOrderTraversal(tree)
+# print(finaldelete("Drinks",tree))
+# levelOrderTraversal(tree)
 
 
-    
+def deleteall(tree):
+    tree.data=None
+    tree.leftnode=None
+    tree.rightnode=None
+ 
+
+# deleteall(tree)
+# levelOrderTraversal(tree)
+postOrderTraversal(tree)
+
+
+
+
 
 
