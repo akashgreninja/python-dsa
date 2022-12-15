@@ -112,8 +112,33 @@ def insertNode(rootNode, nodeValue):
         return leftRotate(rootNode)
     return rootNode
 
-
+# def getminnodeval(rootNode):
+#     if rootNode is None or rootNode.leftChild is None:
+#         return rootNode
+#     return getminnodeval(rootNode.leftchild)
     
+# def deleteNode(rootnode,nodevalue):
+#     if not rootnode:
+#         return rootnode
+#     elif nodevalue< rootnode.data:
+#         rootnode.leftnode=deleteNode(rootnode.leftChild,nodevalue)
+#     elif nodevalue > rootnode.data :
+#         rootnode.rightnode=deleteNode(rootnode.rightChild,nodevalue)
+#     else:
+#         if rootnode.leftChild is None:
+#             temp=rootnode.rightChild
+#             rootnode=None
+#             return temp
+#         elif rootnode.rightChild is None:
+#             temp=rootnode.leftChild
+#             rootnode=None
+#             return temp
+
+def deleteall(rootnode):
+    rootnode.rightChild=None
+    rootnode.leftChild=None
+    rootnode.data=None
+
 
 
 newAVL = AVLNode(5)
@@ -121,5 +146,7 @@ newAVL = insertNode(newAVL, 10)
 newAVL = insertNode(newAVL, 15)
 newAVL = insertNode(newAVL, 20)
 # deleteAVL(newAVL)
+levelOrderTraversal(newAVL)
+deleteall(newAVL)
 levelOrderTraversal(newAVL)
 
