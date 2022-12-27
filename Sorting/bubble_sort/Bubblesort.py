@@ -1,4 +1,4 @@
-
+import math
 def BubbleList(list):
     for _ in range(len(list)-1):
         for j in range(len(list)-1):
@@ -40,9 +40,41 @@ def InsertionSort(list):
             list[j+1]=list[j]
             j-=1
         list[j+1]=key
-    print(list)
+    # print(list)
+    return list
+
+
+
+
+def BucketSort(list):
+    numofbuckets=round(math.sqrt(len(list)))
+    maxvalue=max(list)
+    arr=[]
+    for i in range(numofbuckets):
+        arr.append([])
+    
+    for j in list:
+        index_b=math.ceil(j*numofbuckets/maxvalue)
+        arr[index_b-1].append(j)
+
+    for i in range(numofbuckets):
+        arr[i]=InsertionSort(arr[i])
+    
+    k=0
+    for i in range(numofbuckets):
+        for j in range(len(arr[i])):
+            list[k]=arr[i][j]
+            k+=1
+    print( list)
+
+
 
 
 # BubbleList([4,1,3,7,2])
 # selectionSort([4,1,3,7,2])
-InsertionSort([4,1,3,7,2])
+
+# InsertionSort([4,1,3,7,2])
+BucketSort([4,1,3,7,2])
+
+
+
